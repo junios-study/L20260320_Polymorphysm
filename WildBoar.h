@@ -1,5 +1,11 @@
 #pragma once
-class WildBoar
+#include "Monster.h"
+
+class AWildBoar : public AMonster
 {
+public:
+	AWildBoar();
+	~AWildBoar();
+
 };
 

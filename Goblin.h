@@ -1,5 +1,11 @@
 #pragma once
-class Goblin
+#include "Monster.h"
+
+
+class AGoblin : public AMonster
 {
+public:
+	AGoblin();
+	~AGoblin();
 };
 
