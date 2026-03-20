@@ -7,5 +7,7 @@ public:
 	ASlime();
 	~ASlime();
 
+
+	void Move();
 };
 

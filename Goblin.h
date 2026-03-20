@@ -7,5 +7,8 @@ class AGoblin : public AMonster
 public:
 	AGoblin();
 	~AGoblin();
+
+	void Move();
+
 };
 

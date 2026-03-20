@@ -1,7 +1,7 @@
 #include "Monster.h"
 #include <iostream>
 
-AMonster::AMonster() : X(20)
+AMonster::AMonster()
 {
 }
 

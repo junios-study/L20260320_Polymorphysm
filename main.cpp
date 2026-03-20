@@ -5,22 +5,17 @@
 
 using namespace std;
 
+
+//협업한다.
+			//자식		남     자신
+//public      O			O      O
+//protected   O			X      O
+//private     X	        X      O
 int main()
 {
-	//UEngine* MyEngine = new UEngine();
-	//MyEngine->Run();
-	//delete MyEngine;
-
-	//APlayer MyActor;
-
-	//MyActor.Move();
-
 	AWildBoar WildBoar;
 
-	WildBoar.X = 10;
-
-	WildBoar.Move();
-
+	WildBoar.X;
 
 	return 0;
 }

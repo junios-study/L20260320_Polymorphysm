@@ -8,8 +8,5 @@ public:
 	~AWildBoar();
 
 	void Move();
-
-	int X;
-
 };
 
