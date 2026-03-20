@@ -10,7 +10,7 @@ public:
 	void Attack();
 	void Collect();
 	void Die();
-	void Move();
+	virtual void Move() override;
 
 	int Gold;
 };

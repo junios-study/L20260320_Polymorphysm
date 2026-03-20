@@ -1,59 +1,57 @@
 #include <iostream>
 #include "Engine.h"
 #include "Player.h"
+#include "Monster.h"
 #include "WildBoar.h"
 #include "Goblin.h"
 #include "Slime.h"
+#include <vector>
 
 using namespace std;
-
-//c언어 주로 하는 방법,C++보단 C++ inline 함수
-#define SAFE_DELETES(Object)		if (Object) { delete[] Object; }
-
-#define MAX(A, B)					(A > B ? A : B)
-
-__forceinline int Max(int A, int B)
+void A()
 {
-	return (A > B ? A : B);
+
 }
 
 int main()
 {
-	int WildBoarCount = rand() % 3;
-	int GoblinCount = rand() % 4 + 1;
-	int SlimeCount = rand() % 17 + 3;
+	//[][][] -> [][][][]
+	//복사
+	//[][][] 삭제
+	//STL Container
+	//TArray<AActor*>
+	std::vector<AActor*> Actors;
 
-	AWildBoar* WildBoars = nullptr;
-	if (WildBoarCount > 0)
+	Actors.push_back(new AWildBoar());
+	Actors.push_back(new ASlime());
+	Actors.push_back(new APlayer());
+	Actors.push_back(new ASlime());
+	Actors.push_back(new AGoblin());
+	Actors.push_back(new AWildBoar());
+	Actors.push_back(new AWildBoar());
+	Actors.push_back(new ASlime());
+	Actors.push_back(new AGoblin());
+	Actors.push_back(new APlayer());
+	Actors.push_back(new APlayer());
+
+	//모든 액터 이동
+	//for (int i = 0; i < Actors.size(); ++i)
+	//{
+	//	Actors[i]->Move();
+	//}
+
+	for (const auto& Actor : Actors)
 	{
-		WildBoars =  new AWildBoar[WildBoarCount];
+		Actor->Move();
 	}
 
-	AGoblin* Goblins = new AGoblin[GoblinCount];
-	ASlime* Slimes = new ASlime[SlimeCount];
 
-	for (int i = 0; i < WildBoarCount; i++)
+	for (auto& Actor : Actors)
 	{
-		WildBoars[i].Move();
+		delete Actor;
 	}
 
-	for (int i = 0; i < GoblinCount; i++)
-	{
-		Goblins[i].Move();
-	}
-	for (int i = 0; i < SlimeCount; i++)
-	{
-		Slimes[i].Move();
-	}
-
-	
-	SAFE_DELETES(WildBoars);
-	//if (WildBoars) { delete[] WildBoars; }
-	
-	delete[] Goblins;
-	delete[] Slimes;
-
-	std::cout << Max(10.0f, 20.3f) << std::endl;
+	Actors.clear();
 
 
 	return 0;
