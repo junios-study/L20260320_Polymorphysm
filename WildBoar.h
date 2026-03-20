@@ -7,5 +7,9 @@ public:
 	AWildBoar();
 	~AWildBoar();
 
+	void Move();
+
+	int X;
+
 };
 

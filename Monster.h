@@ -11,6 +11,11 @@ public:
 	void Attack();
 	void Drop();
 
+	void Move();
+
+	//int X;
+
+
 	int Gold;
 };
 

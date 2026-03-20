@@ -1,21 +1,30 @@
 #include "Player.h"
+#include <iostream>
 
-Player::Player()
+APlayer::APlayer()
 {
 }
 
-Player::~Player()
+APlayer::~APlayer()
 {
 }
 
-void Player::Attack()
+void APlayer::Attack()
 {
 }
 
-void Player::Collect()
+void APlayer::Collect()
 {
 }
 
-void Player::Die()
+void APlayer::Die()
 {
+}
+
+void APlayer::Move()
+{
+	std::cout << "APlayer::";
+
+	//AActor::Move();
+	__super::Move();
 }

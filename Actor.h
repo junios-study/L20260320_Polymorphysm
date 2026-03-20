@@ -5,6 +5,9 @@ public:
 	AActor();
 	~AActor();
 
+	int X;
+	int Y;
+
 	void Move();
 };
 
