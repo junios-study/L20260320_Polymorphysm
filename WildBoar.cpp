@@ -14,5 +14,6 @@ void AWildBoar::Move()
 {
 	std::cout << "AWildBoar::";
 
-	__super::Move();
+	AActor::Move();
+	//__super::Move();
 }

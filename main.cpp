@@ -9,13 +9,24 @@ using namespace std;
 
 int main()
 {
-	AWildBoar WildBoar;
-	AGoblin Goblin;
-	ASlime Slime;
+	AWildBoar WildBoar[10];
+	AGoblin Goblin[5];
+	ASlime Slime[20];
 
-	WildBoar.Move();
-	Goblin.Move();
-	Slime.Move();
+	for (int i = 0; i < 10; i++)
+	{
+		WildBoar[i].Move();
+	}
+
+	for (int i = 0; i < 5; i++)
+	{
+		Goblin[i].Move();
+	}
+	for (int i = 0; i < 20; i++)
+	{
+		Slime[i].Move();
+	}
+
 
 	return 0;
 }
