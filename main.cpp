@@ -2,20 +2,20 @@
 #include "Engine.h"
 #include "Player.h"
 #include "WildBoar.h"
+#include "Goblin.h"
+#include "Slime.h"
 
 using namespace std;
 
-
-//협업한다.
-			//자식		남     자신
-//public      O			O      O
-//protected   O			X      O
-//private     X	        X      O
 int main()
 {
 	AWildBoar WildBoar;
+	AGoblin Goblin;
+	ASlime Slime;
 
-	WildBoar.X;
+	WildBoar.Move();
+	Goblin.Move();
+	Slime.Move();
 
 	return 0;
 }
