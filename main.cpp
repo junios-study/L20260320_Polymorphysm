@@ -7,25 +7,53 @@
 
 using namespace std;
 
+//c언어 주로 하는 방법,C++보단 C++ inline 함수
+#define SAFE_DELETES(Object)		if (Object) { delete[] Object; }
+
+#define MAX(A, B)					(A > B ? A : B)
+
+__forceinline int Max(int A, int B)
+{
+	return (A > B ? A : B);
+}
+
 int main()
 {
-	AWildBoar WildBoar[10];
-	AGoblin Goblin[5];
-	ASlime Slime[20];
+	int WildBoarCount = rand() % 3;
+	int GoblinCount = rand() % 4 + 1;
+	int SlimeCount = rand() % 17 + 3;
 
-	for (int i = 0; i < 10; i++)
+	AWildBoar* WildBoars = nullptr;
+	if (WildBoarCount > 0)
 	{
-		WildBoar[i].Move();
+		WildBoars =  new AWildBoar[WildBoarCount];
 	}
 
-	for (int i = 0; i < 5; i++)
+	AGoblin* Goblins = new AGoblin[GoblinCount];
+	ASlime* Slimes = new ASlime[SlimeCount];
+
+	for (int i = 0; i < WildBoarCount; i++)
 	{
-		Goblin[i].Move();
+		WildBoars[i].Move();
 	}
-	for (int i = 0; i < 20; i++)
+
+	for (int i = 0; i < GoblinCount; i++)
 	{
-		Slime[i].Move();
+		Goblins[i].Move();
 	}
+	for (int i = 0; i < SlimeCount; i++)
+	{
+		Slimes[i].Move();
+	}
+
+	
+	SAFE_DELETES(WildBoars);
+	//if (WildBoars) { delete[] WildBoars; }
+	
+	delete[] Goblins;
+	delete[] Slimes;
+
+	std::cout << Max(10.0f, 20.3f) << std::endl;
 
 
 	return 0;
